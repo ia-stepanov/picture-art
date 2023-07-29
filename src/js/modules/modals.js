@@ -1,10 +1,7 @@
 const modals = () => {
-  function bindModal(
-    triggerSelector,
-    modalSelector,
-    closeSelector,
-    closeClickOverlay = true
-  ) {
+  let btnPressed = false;
+
+  function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false) {
     const trigger = document.querySelectorAll(triggerSelector);
     const modal = document.querySelector(modalSelector);
     const close = document.querySelector(closeSelector);
@@ -17,8 +14,15 @@ const modals = () => {
           e.preventDefault();
         }
 
+        btnPressed = true;
+
+        if (destroy) {
+          item.remove();
+        }
+
         windows.forEach((item) => {
           item.style.display = 'none';
+          item.classList.add('animated', 'fadeIn')
         });
 
         modal.style.display = 'block';
@@ -35,10 +39,11 @@ const modals = () => {
       modal.style.display = 'none';
       document.body.style.overflow = '';
       document.body.style.marginRight = `0px`;
+      document.body.children[2].removeAttribute('style');
     });
 
     modal.addEventListener('click', (e) => {
-      if (e.target === modal && closeClickOverlay) {
+      if (e.target === modal) {
         windows.forEach((item) => {
           item.style.display = 'none';
         });
@@ -46,6 +51,7 @@ const modals = () => {
         modal.style.display = 'none';
         document.body.style.overflow = '';
         document.body.style.marginRight = `0px`;
+        document.body.children[2].removeAttribute('style');
       }
     });
   }
@@ -63,6 +69,12 @@ const modals = () => {
       if (!display) {
         document.querySelector(selector).style.display = 'block';
         document.body.style.overflow = 'hidden';
+
+        const scroll = calcScroll();
+        document.body.style.marginRight = `${scroll}px`;
+
+        const rightValue = getRightValue('.fixed-gift');
+        document.body.children[2].style.right = `${rightValue + scroll}px`;
       }
     }, time);
   }
@@ -82,13 +94,38 @@ const modals = () => {
     return scrollWidth;
   }
 
+  function getRightValue(selector) {
+    const selectedEl = document.querySelector(selector);
+
+    if (!selectedEl) {
+      console.error(`Элемент с селектором: ${selector} не найден`);
+      return null;
+    }
+
+    const rightValue = parseInt(getComputedStyle(selectedEl).right);
+    return rightValue;
+  }
+
+  function openByScroll(selector) {
+    window.addEventListener('scroll', () => {
+      if (
+        !btnPressed &&
+        window.pageYOffset + document.documentElement.clientHeight >=
+          document.documentElement.scrollHeight
+      ) {
+        document.querySelector(selector).click();
+      }
+    });
+  }
+
   bindModal('.button-design', '.popup-design', '.popup-design .popup-close');
   bindModal(
     '.button-consultation',
     '.popup-consultation',
     '.popup-consultation .popup-close'
   );
-
+  bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close', true);
+  openByScroll('.fixed-gift');
   // showModalByTime('.popup-consultation[data-modal]', 60000);
 };
 

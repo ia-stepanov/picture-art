@@ -1,4 +1,4 @@
-const sliders = (slides, dir, prev, next) => {
+const sliders = (slides, dir, sec, prev, next) => {
   let slideIndex = 1;
   let paused = false;
   const items = document.querySelectorAll(slides);
@@ -48,16 +48,16 @@ const sliders = (slides, dir, prev, next) => {
       paused = setInterval(() => {
         plusSlides(1);
         items[slideIndex - 1].classList.add('slideInDown');
-      }, 3000);
+      }, sec * 1000);
     } else {
       paused = setInterval(() => {
         plusSlides(1);
         items[slideIndex - 1].classList.remove('slideInRight');
         items[slideIndex - 1].classList.add('slideInLeft');
-      }, 3000);
+      }, sec * 1000);
     }
   }
-  
+
   activateAnimation();
 
   items[0].parentNode.addEventListener('mouseenter', () => {

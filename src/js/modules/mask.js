@@ -35,7 +35,7 @@ const mask = (selector) => {
     let val = this.value.replace(/\D/g, '');
 
     // Если пользователь установил курсор в input, но не ввел номер телефона,
-    // тогда присваиваем input'у значение из маски шаблона '7'
+    // тогда присваиваем инпуту значение из маски шаблона '7'
     if (def.length >= val.length) {
       val = def;
     }
@@ -57,8 +57,8 @@ const mask = (selector) => {
           a;
     });
 
-    // Если пользователь убрал курсор с input'а и не ввел номер телефона,
-    // очищаем значение input'а
+    // Если пользователь убрал курсор с инпута и не ввел номер телефона,
+    // очищаем значение инпута
     if (event.type === 'blur') {
       if (this.value.length === 2) {
         this.value = '';
@@ -69,10 +69,10 @@ const mask = (selector) => {
     }
   }
 
-  // Находим все input'ы, которые соответствуют указанному селектору
+  // Находим все инпуты, которые соответствуют указанному селектору
   let inputs = document.querySelectorAll(selector);
 
-  // Добавляем обработчики событий для каждого найденного input'а
+  // Добавляем обработчики событий для каждого найденного инпута
   inputs.forEach((input) => {
     input.addEventListener('input', createMask);
     input.addEventListener('focus', createMask);

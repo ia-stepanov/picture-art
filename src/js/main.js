@@ -3,6 +3,7 @@ import sliders from './modules/sliders.js';
 import forms from './modules/forms.js';
 import mask from './modules/mask.js';
 import checkTextInputs from './modules/checkTextInputs.js';
+import showMoreStyles from './modules/showMoreStyles.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
@@ -14,4 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
   mask('[name="phone"]');
   checkTextInputs('[name="name"]');
   checkTextInputs('[name="message"]');
+  // showMoreStyles('.button-styles', '.styles-2'); // Показать скрытые элементы в html
+  showMoreStyles('.button-styles', '#styles .row'); // Подгружать элементы с сервера
 });

@@ -23,7 +23,24 @@ const showMoreStyles = (trigger, wrapper) => {
   btn.addEventListener('click', function () {
     getResource('assets/db.json')
       .then((res) => createCards(res.styles))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.error(`Ошибка: ${error}`);
+
+        let errorMessage = document.createElement('div');
+        errorMessage.classList.add('animated', 'fadeInUp', 'error-message');
+        errorMessage.style.cssText = `
+          margin: 2rem auto 6rem;
+          color: red;
+          text-align: center;
+        `;
+
+        errorMessage.innerHTML = `
+          <p style="font-size: 2.2rem;"><b>Что-то пошло не&nbsp;так...</b></p> 
+          <p style="font-size: 2rem;">сервер не&nbsp;отвечает, сайт не&nbsp;может<br>подгрузить дополнительные стили</p>
+        `;
+
+        document.querySelector(wrapper).parentNode.appendChild(errorMessage);
+      });
 
     this.remove();
   });

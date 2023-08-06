@@ -509,7 +509,7 @@ h4 {
   opacity: 0.6;
   font-family: 'Circe Extra Bold', sans-serif;
   margin-left: 4rem;
-  appearance: none;
+  /* appearance: none; */
   border: none;
   display: block;
   font-size: 1.9rem;
@@ -595,7 +595,8 @@ h4 {
   font-size: 1.5rem;
   color: #c51abb;
   border: 2px dashed #c51abb;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
+  padding: 1rem 1.5rem;
 }
 .calc .file_upload > button:before {
   content: '';

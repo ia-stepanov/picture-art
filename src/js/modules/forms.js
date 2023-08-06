@@ -1,9 +1,11 @@
-import { postData } from '../services/requests';
+import { postData } from './services/requests';
 
-const forms = () => {
+const forms = (state) => {
   const form = document.querySelectorAll('form');
   const inputs = document.querySelectorAll('input');
+  const selects = document.querySelectorAll('select');
   const upload = document.querySelectorAll('[name="upload"]');
+  const calcPrice = document.querySelector('.calc-price');
 
   const message = {
     loading: 'Загрузка…',
@@ -23,9 +25,16 @@ const forms = () => {
     inputs.forEach((item) => {
       item.value = '';
     });
+
+    selects.forEach((item) => {
+      item.selectedIndex = 0;
+    });
+
     upload.forEach((item) => {
       item.previousElementSibling.textContent = 'Файл не выбран';
     });
+
+    calcPrice.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
   };
 
   upload.forEach((item) => {
@@ -63,6 +72,23 @@ const forms = () => {
       statusMessage.appendChild(textMessage);
 
       const formData = new FormData(item);
+      if (item.classList.contains('calc-form')) {
+        for (const key in item.children) {
+          const element = item.children[key];
+
+          if (element.nodeName === 'SELECT') {
+            formData.append(
+              element.id,
+              element.options[element.selectedIndex].textContent
+            );
+          } else if (element.nodeName === 'INPUT') {
+            formData.append('promocode', element.value);
+          }
+        }
+
+        formData.append('price', calcPrice.textContent);
+      }
+
       let api;
       item.closest('.popup-design') || item.classList.contains('calc-form')
         ? (api = path.designer)

@@ -2,28 +2,36 @@
 @font-face {
   font-family: 'Circe Light';
   src: url('../fonts/Circe-Light.eot');
-  src: url('../fonts/Circe-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-Light.woff') format('woff'), url('../fonts/Circe-Light.ttf') format('truetype');
+  src: url('../fonts/Circe-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-Light.woff') format('woff'),
+    url('../fonts/Circe-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Circe Regular';
   src: url('../fonts/Circe-Regular.eot');
-  src: url('../fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-Regular.woff') format('woff'), url('../fonts/Circe-Regular.ttf') format('truetype');
+  src: url('../fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-Regular.woff') format('woff'),
+    url('../fonts/Circe-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Circe Bold';
   src: url('../fonts/Circe-Bold.eot');
-  src: url('../fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-Bold.woff') format('woff'), url('../fonts/Circe-Bold.ttf') format('truetype');
+  src: url('../fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-Bold.woff') format('woff'),
+    url('../fonts/Circe-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Circe Extra Bold';
   src: url('../fonts/Circe-ExtraBold.eot');
-  src: url('../fonts/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-ExtraBold.woff') format('woff'), url('../fonts/Circe-ExtraBold.ttf') format('truetype');
+  src: url('../fonts/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-ExtraBold.woff') format('woff'),
+    url('../fonts/Circe-ExtraBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -80,7 +88,7 @@ h4 {
 }
 .button-transparent:before {
   content: '';
-  background: url("../img/camera.svg") no-repeat center;
+  background: url('../img/camera.svg') no-repeat center;
   width: 1.6rem;
   height: 1.6rem;
   display: inline-block;
@@ -157,7 +165,7 @@ h4 {
 }
 .header-menu li a:after {
   content: '';
-  background-image: url("../img/down-arrow.svg");
+  background-image: url('../img/down-arrow.svg');
   margin-left: 0.7rem;
   width: 1.2rem;
   height: 1rem;
@@ -209,7 +217,6 @@ h4 {
   background-color: #f7e7e6;
   padding-top: 3rem;
   /* Making it beautiful */
-
 }
 .main .file_upload {
   position: relative;
@@ -220,8 +227,7 @@ h4 {
   height: 4em;
   /* example */
 
-  line-height: 2em /* the same as height */
-;
+  line-height: 2em /* the same as height */;
 }
 .main .file_upload > button {
   float: right;
@@ -233,9 +239,8 @@ h4 {
 .main .file_upload > div {
   padding-left: 1em;
   /* example */
-
 }
-.main .file_upload input[type=file] {
+.main .file_upload input[type='file'] {
   position: absolute;
   left: 0;
   top: 0;
@@ -265,7 +270,7 @@ h4 {
 }
 .main .file_upload > button:before {
   content: '';
-  background: url("../img/camera.svg") no-repeat center;
+  background: url('../img/camera.svg') no-repeat center;
   width: 1.6rem;
   height: 1.6rem;
   display: inline-block;
@@ -302,7 +307,7 @@ h4 {
 }
 .main .phone:before {
   content: '';
-  background: url("../img/24-hours.svg") no-repeat center;
+  background: url('../img/24-hours.svg') no-repeat center;
   width: 2.4rem;
   height: 2.4rem;
   display: inline-block;
@@ -460,7 +465,7 @@ h4 {
   margin-bottom: 6rem;
 }
 .styles .button-transparent:before {
-  background: url("../img/reload.svg") no-repeat center;
+  background: url('../img/reload.svg') no-repeat center;
   background-size: 100%;
   margin-right: 1rem;
 }
@@ -491,7 +496,6 @@ h4 {
 .calc {
   padding: 8rem 0 4rem 0;
   /* Making it beautiful */
-
 }
 .calc h2,
 .calc .p-heading {
@@ -555,8 +559,7 @@ h4 {
   height: 4em;
   /* example */
 
-  line-height: 2em /* the same as height */
-;
+  line-height: 2em /* the same as height */;
 }
 .calc .file_upload > button {
   float: right;
@@ -566,10 +569,9 @@ h4 {
   height: 100%;
 }
 .calc .file_upload > div {
-  padding-left: 1em /* example */
-;
+  padding-left: 1em /* example */;
 }
-.calc .file_upload input[type=file] {
+.calc .file_upload input[type='file'] {
   position: absolute;
   left: 0;
   top: 0;
@@ -600,7 +602,7 @@ h4 {
 }
 .calc .file_upload > button:before {
   content: '';
-  background: url("../img/camera.svg") no-repeat center;
+  background: url('../img/camera.svg') no-repeat center;
   width: 1.6rem;
   height: 1.6rem;
   display: inline-block;
@@ -852,7 +854,7 @@ h4 {
 }
 .feedback-block .button-order:before {
   content: '';
-  background-image: url("../img/heart.png");
+  background-image: url('../img/heart.png');
   background-size: 100%;
   width: 2rem;
   height: 2rem;
@@ -903,10 +905,31 @@ h4 {
 .often-questions .accordion-heading span {
   border-bottom: 2px dotted #333;
 }
+/* Аккордеон на CSS. Начало */
+.often-questions p.active-style span {
+  color: #e950d7;
+  font-weight: 900;
+  text-decoration: none;
+  border: 0;
+}
+.often-questions .accordion-heading.active + .accordion-block {
+  display: block;
+}
 .often-questions .accordion-block {
-  margin-top: 1rem;
+  /* display: none; */ /* Аккордеон на CSS. Конец */
+  /* margin-top: 1rem; */
+  /* padding: 3rem 4rem; */
   background-color: #f7e7e6;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+.often-questions .accordion-block.active-content {
+  margin-top: 1rem;
   padding: 3rem 4rem;
+  opacity: 1;
+  overflow: visible;
 }
 .often-questions .accordion-block:before {
   content: '';
@@ -1138,9 +1161,8 @@ h4 {
   height: 100%;
   background-color: rgba(178, 80, 188, 0.8);
   /* Making it beautiful */
-
 }
-.popup-design input[name="name"] {
+.popup-design input[name='name'] {
   margin-top: 2rem;
 }
 .popup-design .file_upload {
@@ -1152,8 +1174,7 @@ h4 {
   height: 4em;
   /* example */
 
-  line-height: 2em /* the same as height */
-;
+  line-height: 2em /* the same as height */;
 }
 .popup-design .file_upload > button {
   float: right;
@@ -1165,9 +1186,8 @@ h4 {
 .popup-design .file_upload > div {
   padding-left: 1em;
   /* example */
-
 }
-.popup-design .file_upload input[type=file] {
+.popup-design .file_upload input[type='file'] {
   position: absolute;
   left: 0;
   top: 0;
@@ -1197,7 +1217,7 @@ h4 {
 }
 .popup-design .file_upload > button:before {
   content: '';
-  background: url("../img/camera.svg") no-repeat center;
+  background: url('../img/camera.svg') no-repeat center;
   width: 1.6rem;
   height: 1.6rem;
   display: inline-block;
@@ -1259,7 +1279,7 @@ h4 {
   transform: translateX(-50%) !important;
   padding: 3rem 6rem 4rem 6rem;
 }
-.status{
+.status {
   text-align: center;
 }
 @media (max-width: 1399px) {
@@ -1447,7 +1467,7 @@ h4 {
     bottom: -2.9rem;
   }
   .card-3 .card-block .p-heading {
-    margin: 2.5rem 0  3.5rem 0;
+    margin: 2.5rem 0 3.5rem 0;
   }
   .card-3 .card-block-text {
     padding-top: 0;

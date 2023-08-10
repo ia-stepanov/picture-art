@@ -582,9 +582,8 @@ const modals = () => {
   bindModal('.button-consultation', '.popup-consultation', '.popup-consultation .popup-close');
   bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close', true);
   openByScroll('.fixed-gift');
-  // showModalByTime('.popup-consultation[data-modal]', 60000);
+  showModalByTime('.popup-consultation[data-modal]', 60000);
 };
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modals);
 
 /***/ }),

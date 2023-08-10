@@ -10,6 +10,7 @@ import pictureSize from './modules/pictureSize.js';
 import accordion from './modules/accordion.js';
 import burger from './modules/burger.js';
 import scrolling from './modules/scrolling.js';
+import drop from './modules/drop.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
@@ -30,4 +31,5 @@ window.addEventListener('DOMContentLoaded', () => {
   accordion('.accordion-heading');
   burger('.burger-menu', '.burger');
   scrolling('.pageup');
+  drop();
 });
